@@ -89,6 +89,7 @@ class _ContactViewState extends State<ContactView> {
                 ),
               ),
             ),
+            SizedBox(height: 15),
 
             Expanded(
               child: ListView.builder(itemBuilder: (context, index) {
