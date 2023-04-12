@@ -207,13 +207,14 @@ class _ContactViewState extends State<ContactView> {
             mainAxisSize: MainAxisSize.min,
             children: [
 
-              photo == null ?
-              CircleAvatar(radius: 85,
-                backgroundImage: AssetImage(
-                    "assets/images/hello.jpg"),) :
+              photo != null ?
               CircleAvatar(radius: 85,
                 backgroundImage: FileImage(File(
-                    "$photo")),),
+                    "$photo")),) :
+              CircleAvatar(radius: 85,
+                backgroundImage: AssetImage(
+                    "assets/images/hello.jpg"),),
+
 
               Row(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
