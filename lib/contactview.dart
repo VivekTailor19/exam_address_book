@@ -324,19 +324,7 @@ class _ContactViewState extends State<ContactView> {
               ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: Colors.cyanAccent),
                   onPressed: () {
 
-                // List temp = [
-                //   txtname.text,
-                //   txtphone.text,
-                //   txtemail.text,
-                //   txtwebsite.text,
-                //   photo];
-                  // ContactModal data = ContactModal(
-                  //     name: temp[0],
-                  //     phone: temp[1],
-                  //     email: temp[2],
-                  //     website: temp[3],
-                  //     photo: temp[4]
-                  // );
+
                     ContactModal temp = ContactModal(
                       name: txtname.text,
                       phone: txtphone.text,
@@ -346,7 +334,12 @@ class _ContactViewState extends State<ContactView> {
 
                     setState(() {
                       contacts.add(temp);
-                      //temp = [];
+                      txtname.text = '';
+                      txtphone.text = '';
+                      txtemail.text = '';
+                      txtwebsite.text = '';
+                      photo = '';
+
                     });
                     Navigator.pop(context);
 
