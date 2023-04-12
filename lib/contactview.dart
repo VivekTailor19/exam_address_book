@@ -263,9 +263,10 @@ class _ContactViewState extends State<ContactView> {
                 padding: const EdgeInsets.only(left: 10, right: 10, top: 8),
                 child: TextField(
 
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.number,
                   controller: txtphone,
                   decoration: InputDecoration(
+
                       filled: true,
                       fillColor: Colors.white,
                       enabled: true,
@@ -283,7 +284,7 @@ class _ContactViewState extends State<ContactView> {
                 padding: const EdgeInsets.only(left: 10, right: 10, top: 8),
                 child: TextField(
 
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.emailAddress,
                   controller: txtemail,
                   decoration: InputDecoration(
                       filled: true,
@@ -303,7 +304,7 @@ class _ContactViewState extends State<ContactView> {
                 padding: const EdgeInsets.only(left: 10, right: 10, top: 8),
                 child: TextField(
 
-                  keyboardType: TextInputType.name,
+                  keyboardType: TextInputType.url,
                   controller: txtwebsite,
                   decoration: InputDecoration(
                       filled: true,
@@ -342,7 +343,6 @@ class _ContactViewState extends State<ContactView> {
                       email: txtemail.text,
                       website: txtwebsite.text,
                       photo: photo);
-
 
                     setState(() {
                       contacts.add(temp);
