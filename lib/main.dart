@@ -7,6 +7,7 @@ void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
+      theme: ThemeData.light(),
       routes: {
 
         "/" : (context) => ContactView(),
