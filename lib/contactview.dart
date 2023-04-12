@@ -154,18 +154,21 @@ class _ContactViewState extends State<ContactView> {
             child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
               IconButton(onPressed: () async {
-                Uri call = Uri(
-                  scheme: 'tel',
-                  path:'${c.phone}',
+
+                print("phone num\n\n ${c.phone}");
+                Uri launchUri = Uri(
+                scheme: 'tel',
+                path: '${c.phone}',
                 );
-                await launchUrl(call);
-              },icon:Icon(Icons.call),iconSize: 25,color: Colors.blue,),
+                await launchUrl(launchUri);
+                },
+                icon:Icon(Icons.call),iconSize: 25,color: Colors.blue,),
                 IconButton(onPressed: () async {
                   Uri mess = Uri(
                     scheme:'sms',
                     path:'${c.phone}',
                     queryParameters: <String, String>{
-                      'body':'જો બકા તકલીફ તો રેહવાની '
+                      'body':'જો બકા તકલીફ તો રેહવાની....'
                     },
                   );
                   await launchUrl(mess);
@@ -175,6 +178,9 @@ class _ContactViewState extends State<ContactView> {
                   Uri email = Uri(
                     scheme: 'mailto',
                     path: '${c.email}',
+                    queryParameters: <String, String>{
+                      'body':'Hello_India....'
+                    },
                   );
                   await launchUrl(email);
                    },icon:Icon(Icons.mail_outline),iconSize: 25,color: Colors.red,),
@@ -317,30 +323,30 @@ class _ContactViewState extends State<ContactView> {
               ElevatedButton(style: ElevatedButton.styleFrom(backgroundColor: Colors.cyanAccent),
                   onPressed: () {
 
-                List temp = [
-                  txtname.text,
-                  txtphone.text,
-                  txtemail.text,
-                  txtwebsite.text,
-                  photo];
-                  ContactModal data = ContactModal(
-                      name: temp[0],
-                      phone: temp[1],
-                      email: temp[2],
-                      website: temp[3],
-                      photo: temp[4]
-                  );
-                    //ContactModal(
-                      // name: txtname.text,
-                      // phone: txtphone.text,
-                      // email: txtemail.text,
-                      // website: txtwebsite.text,
-                      // photo: photo);
+                // List temp = [
+                //   txtname.text,
+                //   txtphone.text,
+                //   txtemail.text,
+                //   txtwebsite.text,
+                //   photo];
+                  // ContactModal data = ContactModal(
+                  //     name: temp[0],
+                  //     phone: temp[1],
+                  //     email: temp[2],
+                  //     website: temp[3],
+                  //     photo: temp[4]
+                  // );
+                    ContactModal temp = ContactModal(
+                      name: txtname.text,
+                      phone: txtphone.text,
+                      email: txtemail.text,
+                      website: txtwebsite.text,
+                      photo: photo);
 
 
                     setState(() {
-                      contacts.add(data);
-                      temp = [];
+                      contacts.add(temp);
+                      //temp = [];
                     });
                     Navigator.pop(context);
 
